@@ -1,7 +1,7 @@
 class SearchController < ApplicationController
   def show
     search_string = params['house']['house_id']
-    results = WestrerosService.new.get_member_info(search_string)
+    results = WesterosSaasService.new.get_member_info(search_string)
     @members = to_members(results)
   end
 

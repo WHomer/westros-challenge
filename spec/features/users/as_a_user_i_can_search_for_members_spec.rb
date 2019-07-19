@@ -3,12 +3,14 @@ require 'rails_helper'
 describe 'as a user' do
   describe 'when i visit the root path' do
     it 'should should be able to search for members' do
-      visit root_path
+      VCR.use_cassette('westeros_saas_get_house') do
+        visit root_path
+      end
 
       expect(current_path).to eq(root_path)
 
       select 'Greyjoy', :from => "house[house_id]"
-      VCR.use_cassette('westros_get_members') do
+      VCR.use_cassette('westeros_saas_get_members') do
         click_on('Get Members')
       end
 
