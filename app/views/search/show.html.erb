@@ -1,0 +1,12 @@
+<h1><%= @members.count %> Members</h1>
+
+<section class="members">
+  <% @members.each do |member| %>
+    <div class="member">
+      <ul>
+        <li class="id"><%= member.id %></li>
+        <li class="name"><%= member.name %></li>
+      </ul>
+    </div>
+  <% end %>
+</section>

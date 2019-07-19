@@ -1,0 +1,4 @@
+<%= form_tag("/search", method: "get") do %>
+  <%= select("house", "house_id", @houses) %>
+  <%= submit_tag("Get Members") %>
+<% end %>
